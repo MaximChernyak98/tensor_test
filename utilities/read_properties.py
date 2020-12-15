@@ -9,7 +9,7 @@ config.read(path_to_configuration)
 class ReadConfig:
     @staticmethod
     def get_application_url():
-        url = config.get('common info', 'baseURL')
+        url = config.get('common info', 'yandexURL')
         return url
 
     @staticmethod

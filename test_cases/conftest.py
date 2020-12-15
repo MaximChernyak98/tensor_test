@@ -56,6 +56,8 @@ def setup(browser):
             print("Launching Chrome Browser")
     else:
         driver = browser_with_options(browser)
+    driver.set_window_position(960, 0)
+    driver.set_window_size(960, 700)
     return driver
 
 # PyTest HTML-report
