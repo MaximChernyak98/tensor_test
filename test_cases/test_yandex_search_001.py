@@ -6,7 +6,7 @@ from utilities.read_properties import ReadConfig
 from utilities.custom_logger import LogGen
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 
-from page_objects.yandex_page import YandexSearchPage
+from page_objects.yandex_search_page import YandexSearchPage
 
 
 class Test_001_Search:
@@ -26,12 +26,13 @@ class Test_001_Search:
         try:
             self.yp.find_search_box()
             self.logger.info(f"Test passed: Search field found by {self.yp.search_box_locator}")
+            time.sleep(2)
         except TimeoutException:
             self.logger.error(f"Test failed: Search field not found by {self.yp.search_box_locator} for {self.yp.delay} seconds")
         finally:
             self.driver.close()
+            self.logger.info("---------------------------------------")
 
-    @pytest.mark.current
     def test_suggests_in_search_box(self, setup):
         self.logger.info("Checking suggests in search field")
         self.driver = setup
@@ -53,6 +54,7 @@ class Test_001_Search:
             self.logger.error(f"Test failed: Suggest field not found by {self.yp.suggest_box_locator} for {self.yp.delay} seconds")
         finally:
             self.driver.close()
+            self.logger.info("---------------------------------------")
 
     def search_href_in_list_of_links(self, request_results, link_to_search: str, number_results: int):
         list_of_links = []

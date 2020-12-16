@@ -64,12 +64,6 @@ def setup(browser):
 
 
 def pytest_configure(config):
-    config._metadata['Project Name'] = 'test project'
-    config._metadata['Module Name'] = 'Customers'
-    config._metadata['Tester'] = 'Mecher'
-
-
-@pytest.mark.optionalhook
-def pytest_metadata(metadata):
-    metadata.pop('1', None)
-    metadata.pop('2', None)
+    config._metadata['Project Name'] = 'Vector test'
+    config._metadata['Module Name'] = 'Yandex'
+    config._metadata['Tester'] = 'Maksim Cherniak'
