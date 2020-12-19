@@ -16,12 +16,12 @@ class Test_001_Search:
     path_to_screenshots = os.path.join('.', 'screenshots')
     # TODO добавить скриншоты
 
-    yandexURL = ReadConfig.get_application_url()
+    yandex_search_URL = ReadConfig.get_yandex_search_url()
 
     def test_check_search_box(self, setup):
         self.logger.info("Checking if a search field exists")
         self.driver = setup
-        self.driver.get(self.yandexURL)
+        self.driver.get(self.yandex_search_URL)
         self.yp = YandexSearchPage(self.driver)
         try:
             self.yp.find_search_box()
@@ -30,13 +30,13 @@ class Test_001_Search:
         except TimeoutException:
             self.logger.error(f"Test failed: Search field not found by {self.yp.search_box_locator} for {self.yp.delay} seconds")
         finally:
-            self.driver.close()
-            self.logger.info("---------------------------------------")
+            self.driver.quit()
+            self.logger.info("---------------")
 
     def test_suggests_in_search_box(self, setup):
         self.logger.info("Checking suggests in search field")
         self.driver = setup
-        self.driver.get(self.yandexURL)
+        self.driver.get(self.yandex_search_URL)
         self.yp = YandexSearchPage(self.driver)
         try:
             self.yp.set_text_to_search_box('Тензор')
@@ -53,8 +53,8 @@ class Test_001_Search:
             # TODO добавить отработку различных ненайденок
             self.logger.error(f"Test failed: Suggest field not found by {self.yp.suggest_box_locator} for {self.yp.delay} seconds")
         finally:
-            self.driver.close()
-            self.logger.info("---------------------------------------")
+            self.driver.quit()
+            self.logger.info("---------------")
 
     def search_href_in_list_of_links(self, request_results, link_to_search: str, number_results: int):
         list_of_links = []

@@ -12,7 +12,7 @@ class YandexSearchPage():
     suggest_box_locator = (By.CLASS_NAME, 'mini-suggest__popup-content')
     request_results_locator = (By.CSS_SELECTOR, 'li.serp-item')
     pictures_section_locator = (By.CSS_SELECTOR, '[data-id="images"]')
-    pictures_title_locator = (By.CSS_SELECTOR, '[title="Яндекс.Картинки"]')
+    pictures_title_locator = (By.CSS_SELECTOR, '[type="application/opensearchdescription+xml"]')
 
     def __init__(self, driver):
         self.driver = driver
