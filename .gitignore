@@ -4,7 +4,7 @@ chromedriver.exe
 .idea
 *.png
 reports/*
-logs/*
+*.log
 
 
 # Byte-compiled / optimized / DLL files
