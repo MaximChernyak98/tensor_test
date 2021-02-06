@@ -11,7 +11,7 @@
 3. Скачайте версию драйвера, соответствующую Вашему браузеру.
 
 Инструкция для Windows:
-[https://stepik.org/lesson/25969/step/9?unit=196192]
+https://stepik.org/lesson/25969/step/9?unit=196192
 
 Инструкция для Linux:
 https://stepik.org/lesson/25969/step/9?unit=196192
