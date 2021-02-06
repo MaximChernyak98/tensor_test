@@ -9,10 +9,13 @@
 1. Клонируйте репозиторий, создайте виртуальное окружение
 2. Установите зависимости `pip install -r requirements.txt`
 3. Скачайте версию драйвера, соответствующую Вашему браузеру.
+
 Инструкция для Windows:
 [https://stepik.org/lesson/25969/step/9?unit=196192]
+
 Инструкция для Linux:
 https://stepik.org/lesson/25969/step/9?unit=196192
+
 4. Находясь в папке проект совершите команду:
 ```pytest -v --html=reports\report.html --capture=tee-sys *Relative path to test* --browser *browser for testing*```
 5. При наличии соответствующих драйверов поддерживается работы со следующими браузерами:
